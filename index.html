@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interval Timer</title>
+    <title>Running Interval Timer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,19 +12,35 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #1e1e1e;
+            color: #ffffff;
         }
         .container {
             text-align: center;
-            background-color: white;
+            background-color: #2e2e2e;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         input, button {
             padding: 10px;
             font-size: 16px;
             margin: 5px;
+            border-radius: 5px;
+        }
+        input {
+            background-color: #3e3e3e;
+            color: #ffffff;
+            border: none;
+        }
+        button {
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #666;
         }
         .timer-row {
             margin-bottom: 10px;
@@ -36,19 +52,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sequence Interval Timer</h1>
+        <h1>Running Interval Timer</h1>
 
         <div id="timerList">
             <div class="timer-row">
-                <input type="text" class="timer-name" placeholder="Timer Name" />
-                <input type="number" class="timer-interval" placeholder="Interval (sec)" />
+                <input type="text" class="timer-name" value="Run" />
+                <input type="number" class="timer-interval" value="30" />
+            </div>
+            <div class="timer-row">
+                <input type="text" class="timer-name" value="Walk" />
+                <input type="number" class="timer-interval" value="60" />
             </div>
         </div>
 
         <button id="addTimerButton">Add Timer</button>
         <br/>
         <label for="loopCount">Number of Loops:</label>
-        <input type="number" id="loopCount" value="1" min="1">
+        <input type="number" id="loopCount" value="3" min="1">
         <br/>
         <button id="startButton">Start Sequence</button>
         <button id="stopButton" disabled>Stop</button>
